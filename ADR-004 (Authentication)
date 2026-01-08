@@ -1,0 +1,22 @@
+ADR-004: Enforce Role-Based Access Control and Tenant Isolation at the API Layer
+
+Status: Proposed
+Date: 01-08-26
+
+Context
+The system supports multiple user types (consumer, agent, support, manager, admin) and is intended to support multiple organisations. Preventing unauthorised actions and cross-tenant data access is a core requirement.
+
+Decision
+The system will apply RBAC and tenant scoping centrally in the API layer:
+
+Each request will carry an authenticated user identity and role claims
+
+Requests will be scoped to a tenant context (e.g., tenant header/claim)
+
+Data access will always filter by tenant
+
+Consequences
+
+Positive: Consistent enforcement across all clients; reduces risk of accidental cross-tenant access; easier to audit.
+
+Negative: Additional implementation complexity; requires disciplined testing around permissions and tenant filtering.
