@@ -1,0 +1,16 @@
+ADR-003: Use a Relational Database with Audit Logging
+
+Status: Proposed
+Date: 01-08-26
+
+Context
+Complaints, users, assignments, and reporting data have strong relationships and require reliable consistency. The system also needs traceability for changes (who changed what and when).
+
+Decision
+The system will use a relational database for primary data storage and will include an audit log to record key actions (e.g., status updates, assignment changes, resolution confirmation).
+
+Consequences
+
+Positive: Strong consistency and query capability; supports reporting and SLA calculations; audit trail improves accountability.
+
+Negative: Schema changes require migrations; audit logging increases storage volume and must be managed.
