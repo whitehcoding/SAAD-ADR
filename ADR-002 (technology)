@@ -1,0 +1,16 @@
+ADR-002: Use REST/JSON for Service Communication
+
+Status: Proposed
+Date: 01-08-26
+
+Context
+Multiple clients (web, mobile, agent console) are expected, and the system should be easy to integrate with external services such as notifications and future channels.
+
+Decision
+The application layer will expose functionality through RESTful endpoints using JSON over HTTPS.
+
+Consequences
+
+Positive: Broad client compatibility; straightforward testing (Postman/Swagger); clear separation between client and server.
+
+Negative: Requires careful endpoint consistency and error handling; may need pagination and filtering patterns early to avoid later breaking changes.
