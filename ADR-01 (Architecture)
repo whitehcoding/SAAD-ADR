@@ -1,0 +1,22 @@
+ADR-001: Implement a Three-Level Structure
+
+Status: Suggested
+Date: 01-08-2026
+
+Context
+To facilitate maintainability, testing, and future expansion, the system's user-facing interfaces, business logic, and data storage must be clearly separated.
+
+Decision
+The solution will use a three-tier architecture consisting of:
+
+Presentation layer (agent UI, mobile, and online)
+
+Application layer (business rules and REST APIs)
+
+Relational database, or data layer
+
+Consequences
+
+Positive: Supports API reuse (e.g., chatbot later); makes it easy to develop the UI and backend independently; clearly separates responsibilities.
+
+Negative: Requires careful API design and versioning; adds integration overhead between levels.
