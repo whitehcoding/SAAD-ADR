@@ -1,0 +1,16 @@
+ADR-005: Centralised Error Management and Consistent API Responses
+
+Status: Proposed
+Date: 01-08-2026
+
+Situation
+Several client applications will have access to the system's APIs. Clients may obtain ambiguous or inconsistent results if error handling is not done consistently, which would make the system more difficult to use, debug, and maintain.
+
+Choosing
+The API layer of the application will provide centralised error handling. A consistent response format, which includes a clear error message and, if necessary, a correlation or error identification, will be used to map all errors to standard HTTP status codes.
+
+Implications
+
+Positives include better client-side error handling, predictable API behaviour, and simpler debugging and logging.
+
+Negative: Needs discipline and upfront design effort to guarantee that all problems are handled consistently.
