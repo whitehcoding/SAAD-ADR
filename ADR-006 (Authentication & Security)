@@ -1,0 +1,16 @@
+ADR-006: Apply Token-Based Security with Role-Based Access Control
+
+Status: Proposed
+Date: 01-08-26
+
+Context
+The system must restrict access to certain functionality depending on user roles and it should be able to protect sensitive data from unauthorised access, while remaining flexible enough to support multiple client types.
+
+Decision
+The system will use token based authentication (such as JWT) combined with role based access control (RBAC). Security checks will be enforced at the API layer to ensure that users can only perform that actions permitted by their assigned roles.
+
+Consequences
+
+Positive: Supports future integration with external identity providers; separates authentication from client implementation; robust and scalable security mechanism.
+
+Negative: Increased complexity during initial setup; requires careful token handling and validation.
